@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css ">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+</head>
+<style>
+    
+*
+{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; 
+    scroll-behavior: smooth;
+}
+p 
+{
+    font-weight: 300;
+    color: #111;
+}
+body
+{
+min-height: 1000px;
+}
+.banner
+{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:url({%static 'images/bg1.jpg' %});
+    /* background-size: 100% 100%;  or we can write in some case*/ 
+    background-size: cover;
+}
+.banner .content
+{
+    max-width: 900px;
+    text-align:center;
+}
+.banner .content h2
+{
+font-size: 5em;
+color: rgb(7 241 19);
+}
+.banner .content p{
+font-size: 1em;
+color: #ffff;
+}
+.btn
+{
+    font-size: 1em;
+    color: #fff;
+    background-color: #ff0157;
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+.btn:hover
+{
+letter-spacing: 10px;
+border: 5px groove black;
+font-style: italic;
+}
+header
+{
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left:0;
+    width: 100%;
+    padding: 40px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 1s;
+}
+header.sticky
+{
+    background-color: #fff;
+    padding: 10px 100px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+header .logo 
+{
+    width: 100px;
+    height: 100px;
+    background-color: #000000;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border-top:10px solid #f1c40f;  
+    position: relative; 
+
+    animation: a1 3s linear infinite;
+   
+}
+header .logo:hover
+{
+animation: none;
+}
+header .logo::before,.logo::after
+{
+    content:  '';
+    width: 100px;
+    height:100px;
+    /* background-color: red; */
+    position: absolute;
+    left: 0;
+    top: -10px;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+header .logo::before
+{
+    border-top: 10px solid green;
+    transform: rotate(120deg);
+}
+header .logo::after
+{
+    border-top: 10px solid blue;
+    transform: rotate(240deg);
+}
+header .logo span
+{
+    position:absolute;
+    width: 100px;
+  height:100px;
+  color:#ff0157 ;
+  text-align: center;
+  line-height: 100px;
+  font-size: 20px;
+  font-weight: 900;
+  animation: a2 3s linear infinite;
+
+}
+@keyframes a1
+{
+   to {
+transform: rotate(360deg);
+    }
+}
+@keyframes a2
+{
+   to {
+transform: rotate(-360deg);
+    }
+}
+header .navigation
+{
+    display: flex;
+    position: relative;
+}
+header .navigation li
+{
+    list-style: none;
+    margin-left: 30PX;
+}
+header .navigation li a
+{
+    text-decoration: none;
+    color: #0af0fb;
+    font-weight: 300;
+    transition: 0.5s;
+}
+header .navigation li a:hover
+{
+    color: #ff0157;
+    font-weight:900;
+    letter-spacing: 10px;
+    font-size: 2em;
+    text-decoration: underline;
+}
+/* ************************************************* */
+
+section
+{
+    padding: 100px;
+}
+.row
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+.row .col50
+{
+    position: relative;
+    width: 48%;
+}
+.titletext
+{
+    color: #111;
+    font-size: 2em;
+    font-weight: 300;
+}
+.titletext span
+{
+    color:#ff0157;
+    font-weight: 800;
+    font-size: 2.5em;
+}
+.row .col50 .imgBx
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.row .col50 .imgBx img
+{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+/* start menu section */
+.title
+{
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.menu .content
+{  
+    display: flex;
+     justify-content: center;
+    /* flex-direction: row-reverse; */
+    flex-wrap: wrap;
+    margin-top: 40px;
+} 
+ .menu .content .box
+{
+    /* width: 100px; */
+    width: 340px;
+    /* width: 510px; */
+    margin: 20px;
+    border: 15px solid #fff;
+    box-shadow: 0 5px 35px 0 rgba(0, 0, 0, 0.08);
+}
+.menu .content .box .imgBx
+{
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+.menu .content .box .imgBx img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} 
+.menu .content .box .text
+{
+    padding: 15px 0 5px;
+}
+.menu .content .box .text h3
+{
+    font-weight: 400px;
+    color: #111;
+}
+/* start expert section */
+.expert .content
+{  
+    display: flex;
+     justify-content: center;
+    /* flex-direction: row-reverse; */
+    flex-wrap: wrap;
+    margin-top: 40px;
+} 
+.expert .content .box
+{
+    width:245px ;
+    /* width: 100px; */
+    /* width: 340px; */
+    /* width: 510px; */
+    margin: 20px;
+    border: 15px solid #fff;
+    box-shadow: 0 5px 35px 0 rgba(0, 0, 0, 0.08);
+}
+.expert .content .box .imgBx
+{
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+.expert .content .box .imgBx img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} 
+.expert .content .box .text
+{
+    padding: 15px 0 5px;
+}
+.expert .content .box .text h3
+{
+    font-weight: 400px;
+    color: #111;
+}
+.testimonials
+{
+    background:url({%static 'images/back2.jpg' %});
+    background-size: 100% 100%;
+}
+.titlewhite .titletext,
+.titlewhite p
+{
+    color: #fff;
+text-align: center;
+}
+.testimonials .content
+{  
+    display: flex;
+     justify-content: center;
+    /* flex-direction: row-reverse; */
+    flex-wrap: wrap;
+    margin-top: 40px;
+} 
+.testimonials .content .box
+{
+    width: 340px;
+    margin: 20px;
+    padding: 40px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.testimonials .content .box .imgBx
+{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 5px 35px 0 rgb(190, 187, 189);
+    /* box-shadow: 0 5px 35px 0 rgba(128, 17, 17, 0.08); */
+
+}
+.testimonials .content .box .imgBx img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} 
+.testimonials .content .box .text
+{
+    text-align: center;
+}
+.testimonials .content .box .text p
+{
+    color: #666;
+    font-style: italic;
+
+}
+.testimonials .content .box .text h3
+{
+    margin-top:20px ;
+    font-size: 1.5em;
+    color: #ff0157;
+    font-weight: 800;
+}
+.contacts
+{
+    background:url({%static 'images/bg3.jpg' %});
+    background-size: 100% 100%;
+}
+.contactform
+{
+    padding: 75px 50px;
+    background: #fff;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin-top: 50px;
+}
+.contactform h3
+{
+   color: #111; 
+   font-size: 1.2em;
+   margin-bottom: 20px;
+   font-weight: 500;
+}
+.contactform .inputBox
+{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.contactform .inputBox input,
+.contactform .inputBox textarea
+{
+    width: 100%;
+    border: 1px solid #555;
+    padding: 10px;
+    color: #111;
+    outline: none;
+    font-size: 16px;
+    font-weight: 300;
+    resize: none;
+
+}
+.contactform .inputBox input[ type="submit"]
+{
+    font-size: 1em;
+    color:#fff;
+    background: #ff0157;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    width: 100PX;
+    font-weight: 500;
+    /* border: none; */
+    cursor: pointer;
+
+
+}
+</style>
+<body>
+    <header>
+        <div class="logo">
+        <a href="" ><span><h1>H</h1></span></a>
+        </div>
+        <ul class="navigation">
+            <li><a href="#banner">Home</a></li>
+            <li><a href="#abaut">Abaut</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#expert">Expert</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contacts">Contacts</a></li>
+        </ul>
+    </header>
+    <section class="banner" id="banner">
+        <div class="content">
+            <h2>Always Choose Good</h2>
+            <p>Lorem ipsum dolor sit amet consectetur 
+                adipisicing elit. Suscipit, eaque neque
+                 quaerat exercitationem, explicabo in quas,
+                et dignissimos necessitatibus ea eligendi.
+                Neque reprehenderit ullam inventore
+                perspiciatis 
+                architecto fuga quos itaque.</p>
+            <a href="" class="btn">Our Menu</a>
+        </div>
+
+    </section> 
+
+    <section class="abaut" id="abaut">
+        <div class="row">
+            <div class="col50">
+                <h2 class="titletext"><span>A</span>bout Us</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aut suscipit accusantium? Nihil aspernatur pariatur distinctio tempore eligendi ea totam mollitia ipsa, praesentium recusandae voluptatum laborum. Maiores consequatur iure excepturi?
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum optio molestias eveniet ab, necessitatibus unde fuga cupiditate quae aut maxime sapiente repellendus amet similique veritatis impedit architecto, at, eligendi quis!<br><br>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo deserunt odio quisquam. Hic, repudiandae eveniet! Quaerat optio expedita iure, ex, vitae molestias ducimus natus officiis amet error eaque nam harum!
+                </p>
+            </div>
+            <div class="col50">
+                <div class="imgBx">
+                    <img src="{%static 'images/new.jpg' %}">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <div class="title">
+            <h2 class="titletext">Our <span>M</span>enu</h2>
+            <p>This is our Menu making by best cook in world for our best costomer</p>
+        </div>
+        <div class="content">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'images/menu1.jpg' %}" alt="">
+                </div>
+                <div class="text">
+                    <h3>Special Salads</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'images/menu2.jpg' %}" alt="">
+                </div>
+                <div class="text">
+                    <h3>Special Salads</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'images/menu3.jpg' %}" alt="">
+                </div>
+                <div class="text">
+                    <h3>Special Salads</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'images/menu9.jpg' %}" alt="">
+                </div>
+                <div class="text">
+                    <h3>Special Salads</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'images/menu8.jpg' %}" alt="">
+                </div>
+                <div class="text">
+                    <h3>Special Salads</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'images/menu7.jpg' %}" alt="">
+                </div>
+                <div class="text">
+                    <h3>Special Salads</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'images/menu4.jpg' %}" alt="">
+                </div>
+                <div class="text">
+                    <h3>Special Salads</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'images/menu5.jpg' %}" alt="">
+                </div>
+                <div class="text">
+                    <h3>Special Salads</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'images/menu6.jpg' %}" alt="">
+                </div>
+                <div class="text">
+                    <h3>Special Salads</h3>
+                </div>
+            </div>
+        </div>    
+        
+            <div class="title">
+                <a href="" class="btn">View All</a>
+            </div>    
+    </section>
+
+    <section class="expert" id="expert">
+        <div class="title">
+            <h2 class="titletext">Our Kitchen<span>E</span>xpert</h2>
+            <p>This is our best cook in world for our best costomer</p>
+        </div>
+        <div class="content">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'images/expert1.jpg' %}" alt="">
+                </div>
+                <div class="text">
+                    <h3>Someone Famous</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'images/expert2.jpg' %}" alt="">
+                </div>
+                <div class="text">
+                    <h3>Someone Famous</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'images/expert3.jpg' %}" alt="">
+                </div>
+                <div class="text">
+                    <h3>Someone Famous</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'images/expert4.jpg' %}" alt="">
+                </div>
+                <div class="text">
+                    <h3>Someone Famous</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- start of testimonials section -->
+
+    <section class="testimonials" id="testimonials">
+        <div class="titlewhite">
+            <h2 class="titletext">They <span>S</span>aid Abaut Us</h2>
+            <p>These are your daily costomer who actually enjoying our services</p>
+        </div>
+        <div class="content">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'images/testi6.jpg' %}" alt="">
+                </div>
+                <div class="text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nobis corporis quisquam unde veniam vero et.
+                        Ratione deleniti laborum accusamus odio tenetur, corporis unde eos, enim repellat, alias veniam dolorem?
+                    </p>
+                    <h3>Someone Famous</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'images/testi5.jpg' %}"  alt="">
+                </div>
+                <div class="text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nobis corporis quisquam unde veniam vero et.
+                        Ratione deleniti laborum accusamus odio tenetur, corporis unde eos, enim repellat, alias veniam dolorem?
+                    </p>
+                    <h3>Someone Famous</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="{%static 'images/testi4.jpg' %}"  alt="">
+                </div>
+                <div class="text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nobis corporis quisquam unde veniam vero et.
+                        Ratione deleniti laborum accusamus odio tenetur, corporis unde eos, enim repellat, alias veniam dolorem?
+                    </p>
+                    <h3>Someone Famous</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start contact secton -->
+    <section class="contacts" id="contacts">
+        <div class="title">
+            <h2 class="titletext"><span>C</span>ontact Us</h2>
+            <p>This is our best cook in world for our best costomer</p>
+        </div>
+        <div class="contactform">
+            <h3>Send Message</h3>
+            <div class="inputBox">
+                <input type="text" placeholder="Name">
+            </div>
+            <div class="inputBox">
+                <input type="text" placeholder="Email">
+            </div>
+            <div class="inputBox">
+                <textarea placeholder="Feedback"></textarea>
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="send">
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+    window.addEventListener('scroll',function(){
+        const header = document.querySelector('header');
+        header.classList.toggle("sticky",window.scrollY > 0);
+    });
+    </script>
+</body>
+</html>

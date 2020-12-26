@@ -1,0 +1,26 @@
+
+{%extends 'blog/base.html'%}
+{%block title_block%}SONU"S BLOG HOME PAGE{%endblock%}
+
+{%block content%}
+
+<h1>SONU'S BLOG</h1><hr>
+{%if tag%}
+       <h2>Post tagged with '{{tag.name|upper}}'</h2>
+ {%endif%}
+{%for post in post_list%}
+
+          <a href="{{post.get_absolute_url}}"><h2> {{post.title}}</h2></a>
+          <p class="post">published on {{post.publish}} by {{post.author|title}}</p>
+
+          <P id="tag">Tags:-
+                     {%for tag in post.tags.all%}
+                     <a href="{%url 'post_list_by_tag_name' tag.slug%}" class="btn">{{tag.name}}</a>
+                     <!-- {%if not forloop.last%},{%endif%}   (this is , related code)-->
+                    {%endfor%}
+          </P>
+          
+          {{post.body|truncatewords:30|linebreaks}}<hr>
+{%endfor%}
+{%include 'blog/pagination.html' with page=post_list%}
+{%endblock%}

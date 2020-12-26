@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+</head>
+<style>
+   *
+{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; 
+    scroll-behavior: smooth;
+}
+
+.banner
+{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:url({%static 'images/indexbg2.jpg'%});
+    background-size: 100% 100%; 
+    
+}
+.banner .content
+{
+    max-width: 900px;
+    text-align:center;
+}
+.banner .content h2
+{
+font-size: 5em;
+color: #2f2d2c;
+}
+.banner .content h2:hover
+{
+    color: rgb(255, 255, 255);
+    box-shadow: 0 5px 35px 0 rgb(255, 255, 255);
+}
+header
+{
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left:0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 1s;
+}
+header .logo 
+{
+    width: 100px;
+    height: 100px;
+    background-color: #000000;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border-top:10px solid #ffcc00;  
+    position: relative; 
+
+    animation: a1 3s linear infinite;
+   
+}
+header .logo:hover
+{
+animation: none;
+}
+header .logo::before,.logo::after
+{
+    content:  '';
+    width: 100px;
+    height:100px;
+    /* background-color: red; */
+    position: absolute;
+    left: 0;
+    top: -10px;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+header .logo::before
+{
+    border-top: 10px solid rgb(0, 255, 0);
+    transform: rotate(120deg);
+}
+header .logo::after
+{
+    border-top: 10px solid blue;
+    transform: rotate(240deg);
+}
+header .logo span
+{
+    position:absolute;
+    width: 100px;
+  height:100px;
+  color:#ff0157 ;
+  text-align: center;
+  line-height: 100px;
+  font-size: 20px;
+  font-weight: 900;
+  animation: a2 3s linear infinite;
+
+}
+@keyframes a1
+{
+   to {
+transform: rotate(360deg);
+    }
+}
+@keyframes a2
+{
+   to {
+transform: rotate(-360deg);
+    }
+}
+header .navigation
+{
+    display: flex;
+    position: relative;
+}
+header .navigation li
+{
+    list-style: none;
+    margin-left: 30PX;
+
+}
+header .navigation li a
+{
+    text-decoration: none;
+    color: #e4ff00;
+    font-weight: 300;
+    transition: 0.5s;
+  
+
+}
+header .navigation li a:hover
+{
+    color: #ff0157;
+    font-weight:900;
+    letter-spacing: 10px;
+    font-size: 2em;
+    text-decoration: underline;
+    box-shadow: 0 5px 35px 0 rgb(255, 255, 255);
+}
+
+</style>
+<body>
+    <header>
+        <div class="logo">
+        <a href="" ><span><h1>S</h1></span></a>
+        </div>
+        <ul class="navigation">
+            <li><a href="#banner">Home</a></li>
+            <li><a href="/post">BLOGS</a></li>
+            <li><a href="jym">JYM PAGE</a></li>
+            <li><a href="/hotel">HOTEL WEB DEMO</a></li>
+        </ul>
+    </header> 
+</header>
+<section class="banner" id="banner">
+    <div class="content">
+        <h2>THIS IS MY DEMO-CONTENT</h2>  
+    </div>
+</section> 
+
+    <script type="text/javascript">
+        window.addEventListener('scroll',function(){
+            const header = document.querySelector('header');
+            header.classList.toggle("sticky",window.scrollY > 0);
+        });
+        </script>
+</body>
+</html>
